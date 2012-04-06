@@ -10,6 +10,7 @@ class Majax_Twilio_Client_Status_CallResponse extends Majax_Twilio_Client_Incomi
 
     public function __construct($vars)
     {
+        parent::__construct($vars);
         if (isset($vars['Duration']))
             $this->duration = $vars['Duration'];
         if (isset($vars['RecordingUrl']))
