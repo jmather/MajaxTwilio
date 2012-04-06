@@ -36,6 +36,16 @@ class Majax_Twilio_Client implements Majax_Twilio_Client_CallInterface, Majax_Tw
         return new Majax_Twilio_Client_Text($this->client, $from, $to, $message);
     }
 
+    public function createPhoneNumberValidator($phone_number)
+    {
+        return new Majax_Twilio_Client_Validator($this->client, $phone_number);
+    }
+
+    public function getAccountClient()
+    {
+        return new Majax_Twilio_Client_Account($this->client);
+    }
+
     /**
      * @return boolean
      */
@@ -76,6 +86,11 @@ class Majax_Twilio_Client implements Majax_Twilio_Client_CallInterface, Majax_Tw
     public function parseTextResponse()
     {
         return new Majax_Twilio_Client_Status_TextResponse($_POST);
+    }
+
+    public function parseValidatorResponse()
+    {
+        return new Majax_Twilio_Client_Status_ValidatorResponse($_POST);
     }
 
     public function deleteRecording($recording_sid)

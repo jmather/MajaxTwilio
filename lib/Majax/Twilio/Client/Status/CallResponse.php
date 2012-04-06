@@ -41,4 +41,9 @@ class Majax_Twilio_Client_Status_CallResponse extends Majax_Twilio_Client_Incomi
     {
         return $this->recording_url;
     }
+
+    public function getAnsweredBy()
+    {
+        return $this->answered_by;
+    }
 }
