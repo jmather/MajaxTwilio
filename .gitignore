@@ -1,0 +1,3 @@
+examples/config.php
+examples/*/config.php
+.idea/
