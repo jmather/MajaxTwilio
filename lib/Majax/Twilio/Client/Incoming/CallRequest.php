@@ -33,32 +33,58 @@ class Majax_Twilio_Client_Incoming_CallRequest
 
     public function __construct($vars)
     {
-        $this->account_sid = $vars['AccountSid'];
-        $this->to_zip = $vars['ToZip'];
-        $this->from_state = $vars['FromState'];
-        $this->called = $vars['Called'];
-        $this->from_country = $vars['FromCountry'];
-        $this->caller_country = $vars['CallerCountry'];
-        $this->called_zip = $vars['CalledZip'];
-        $this->direction = $vars['Direction'];
-        $this->from_city = $vars['FromCity'];
-        $this->called_country = $vars['CalledCountry'];
-        $this->caller_state = $vars['CallerState'];
-        $this->call_sid = $vars['CallSid'];
-        $this->called_state = $vars['CalledState'];
-        $this->from = $vars['From'];
-        $this->caller_zip = $vars['CallerZip'];
-        $this->from_zip = $vars['FromZip'];
-        $this->call_status = $vars['CallStatus'];
-        $this->to_city = $vars['ToCity'];
-        $this->to_state = $vars['ToState'];
-        $this->to = $vars['To'];
-        $this->call_duration = $vars['CallDuration'];
-        $this->to_country = $vars['ToCountry'];
-        $this->caller_city = $vars['CallerCity'];
-        $this->api_version = $vars['ApiVersion'];
-        $this->caller = $vars['Caller'];
-        $this->called_city = $vars['CalledCity'];
+        if (isset($vars['AccountSid']))
+            $this->account_sid = $vars['AccountSid'];
+        if (isset($vars['ToZip']))
+            $this->to_zip = $vars['ToZip'];
+        if (isset($vars['FromState']))
+            $this->from_state = $vars['FromState'];
+        if (isset($vars['Called']))
+            $this->called = $vars['Called'];
+        if (isset($vars['FromCountry']))
+            $this->from_country = $vars['FromCountry'];
+        if (isset($vars['CallerCountry']))
+            $this->caller_country = $vars['CallerCountry'];
+        if (isset($vars['CalledZip']))
+            $this->called_zip = $vars['CalledZip'];
+        if (isset($vars['Direction']))
+            $this->direction = $vars['Direction'];
+        if (isset($vars['FromCity']))
+            $this->from_city = $vars['FromCity'];
+        if (isset($vars['CalledCountry']))
+            $this->called_country = $vars['CalledCountry'];
+        if (isset($vars['CallerState']))
+            $this->caller_state = $vars['CallerState'];
+        if (isset($vars['CallSid']))
+            $this->call_sid = $vars['CallSid'];
+        if (isset($vars['CalledState']))
+            $this->called_state = $vars['CalledState'];
+        if (isset($vars['From']))
+            $this->from = $vars['From'];
+        if (isset($vars['CallerZip']))
+            $this->caller_zip = $vars['CallerZip'];
+        if (isset($vars['FromZip']))
+            $this->from_zip = $vars['FromZip'];
+        if (isset($vars['CallStatus']))
+            $this->call_status = $vars['CallStatus'];
+        if (isset($vars['ToCity']))
+            $this->to_city = $vars['ToCity'];
+        if (isset($vars['ToState']))
+            $this->to_state = $vars['ToState'];
+        if (isset($vars['To']))
+            $this->to = $vars['To'];
+        if (isset($vars['ToCountry']))
+            $this->to_country = $vars['ToCountry'];
+        if (isset($vars['CallerCity']))
+            $this->caller_city = $vars['CallerCity'];
+        if (isset($vars['ApiVersion']))
+            $this->api_version = $vars['ApiVersion'];
+        if (isset($vars['Caller']))
+            $this->caller = $vars['Caller'];
+        if (isset($vars['CalledCity']))
+            $this->called_city = $vars['CalledCity'];
+        if (isset($vars['CallDuration']))
+            $this->call_duration = $vars['CallDuration'];
         if (isset($vars['ForwardedFrom']))
             $this->forwarded_from = $vars['ForwardedFrom'];
         if (isset($vars['CallerName']))
