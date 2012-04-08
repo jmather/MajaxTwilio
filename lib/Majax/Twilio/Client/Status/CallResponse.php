@@ -7,6 +7,7 @@ class Majax_Twilio_Client_Status_CallResponse extends Majax_Twilio_Client_Incomi
     private $recording_sid;
     private $recording_duration;
     private $answered_by;
+    private $digits;
 
     public function __construct($vars)
     {
@@ -21,6 +22,8 @@ class Majax_Twilio_Client_Status_CallResponse extends Majax_Twilio_Client_Incomi
             $this->recording_duration = $vars['RecordingDuration'];
         if (isset($vars['AnsweredBy']))
             $this->answered_by = $vars['AnsweredBy'];
+        if (isset($vars['Digits']))
+            $this->digits = $vars['Digits'];
     }
 
     public function getDuration()
