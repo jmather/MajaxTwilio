@@ -53,7 +53,7 @@ class Majax_Twilio_Client implements Majax_Twilio_Client_CallInterface, Majax_Tw
     {
         if (!isset($_SERVER['HTTP_HOST']) || !isset($_SERVER['REQUEST_URI']) || !isset($_SERVER['HTTP_X_TWILIO_SIGNATURE']))
             return false;
-        
+
         $validator = new Services_Twilio_RequestValidator($this->auth_token);
         $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         $signature = $_SERVER['HTTP_X_TWILIO_SIGNATURE'];
@@ -84,6 +84,11 @@ class Majax_Twilio_Client implements Majax_Twilio_Client_CallInterface, Majax_Tw
     public function parseRecordResponse()
     {
         return new Majax_Twilio_Client_Status_RecordResponse($_POST);
+    }
+
+    public function parseTranscriptResponse()
+    {
+        return new Majax_Twilio_Client_Status_TranscriptResponse($_POST);
     }
 
     public function parseTextResponse()
