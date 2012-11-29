@@ -3,23 +3,25 @@
 class Majax_Twilio_Client_Status_TranscriptResponse extends Majax_Twilio_Client_Incoming_CallRequest
 {
     private $recording_sid;
-    private $recording_duration;
-    private $transcript_text;
-    private $price;
-    private $status;
+    private $recording_url;
+    private $transcription_text;
+    private $transcription_sid;
+    private $transcription_status;
 
     public function __construct($vars)
     {
         if (isset($vars['RecordingSid']))
             $this->recording_sid = $vars['RecordingSid'];
-        if (isset($vars['Duration']))
-            $this->recording_duration = $vars['Duration'];
+        if (isset($vars['RecordingUrl']))
+            $this->recording_url = $vars['RecordingUrl'];
         if (isset($vars['Price']))
             $this->price = $vars['Price'];
-        if (isset($vars['TranscriptText']))
-            $this->transcript_text = $vars['TranscriptText'];
-        if (isset($vars['Status']))
-            $this->status = $vars['Status'];
+        if (isset($vars['TranscriptionText']))
+            $this->transcription_text = $vars['TranscriptionText'];
+        if (isset($vars['TranscriptionStatus']))
+            $this->transcription_status = $vars['TranscriptionStatus'];
+        if (isset($vars['TranscriptionSid']))
+            $this->transcription_sid = $vars['TranscriptionSid'];
     }
 
     public function getRecordingUrl()
@@ -27,19 +29,9 @@ class Majax_Twilio_Client_Status_TranscriptResponse extends Majax_Twilio_Client_
         return $this->recording_url;
     }
 
-    public function getRecordingDuration()
-    {
-        return $this->recording_duration;
-    }
-
     public function getRecordingSid()
     {
         return $this->recording_sid;
-    }
-
-    public function getDigits()
-    {
-        return $this->digits;
     }
 
     public function setPrice($price)
@@ -52,24 +44,33 @@ class Majax_Twilio_Client_Status_TranscriptResponse extends Majax_Twilio_Client_
         return $this->price;
     }
 
-    public function setTranscriptText($transcript_text)
+    public function setTranscriptionText($transcript_text)
     {
-        $this->transcript_text = $transcript_text;
+        $this->transcription_text = $transcript_text;
     }
 
-    public function getTranscriptText()
+    public function getTranscriptionText()
     {
-        return $this->transcript_text;
+        return $this->transcription_text;
     }
 
-    public function setStatus($status)
+    public function setTranscriptionSid($transcription_sid)
     {
-        $this->status = $status;
+        $this->transcription_sid = $transcription_sid;
     }
 
-    public function getStatus()
+    public function getTranscriptionSid()
     {
-        return $this->status;
+        return $this->transcription_sid;
     }
 
+    public function setTranscriptionStatus($transcription_status)
+    {
+        $this->transcription_status = $transcription_status;
+    }
+
+    public function getTranscriptionStatus()
+    {
+        return $this->transcription_status;
+    }
 }
