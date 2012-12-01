@@ -1,3 +1,5 @@
 examples/config.php
 examples/*/config.php
-.idea/
+vendor/*
+bin/*
+composer.lock
